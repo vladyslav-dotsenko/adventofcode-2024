@@ -20,7 +20,7 @@ const safetyTick = (cur, prev, rest, velocity, tolerance = 1) => {
   // console.log(`${prev} vs ${cur}`, {d: diff, v: velocity, sd: sameDirection, nj: noJumps, last: isLast, t: tolerance})
 
   if (!sameDirection || !noJumps) {
-    if (!nextTolerance) return false
+    if (!tolerance) return false
     if (isLast) return true
 
     const [head, ...tail] = rest
